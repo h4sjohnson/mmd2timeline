@@ -390,7 +390,7 @@ namespace mmd2timeline
             }, rightSide);
             heelSettingsGroup.Elements.Add(_ToeJointDriveXTargetAdjust);
 
-            _HeelHeightAdjustJSON = SetupSliderFloat(self, "Heel Height Fixing", 0.075f, 0f, 1f, v =>
+            _HeelHeightAdjustJSON = SetupSliderFloat(self, "Heel Height Fixing", 0.075f, -0.2f, 1f, v =>
             {
                 UpateHeelJointDriveXAngle();
             }, rightSide, "F4");

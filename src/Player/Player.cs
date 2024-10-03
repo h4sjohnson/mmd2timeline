@@ -191,6 +191,8 @@ namespace mmd2timeline
         {
             if (atom.type == "Person")
             {
+                if (atom.on == false)
+                    return;
                 // 正在加载中，不进行处理
                 if (SuperController.singleton.isLoading)
                 {
@@ -611,10 +613,10 @@ namespace mmd2timeline
 
                 // 克隆一下
                 item = item.Clone();
-
+                item.Save();
+                
                 Playlist.AddPlayItem(item);
 
-                item.Save();
 
                 yield return null;
 
@@ -841,6 +843,14 @@ namespace mmd2timeline
                     $"AMaxTime:{_AudioPlayHelper.MaxTime}" +
                     $"\r\n" +
                     $"CMaxTime:{_CameraHelper.MaxTime}" +
+                    $"\r\n" +
+                    $"_ProgressHelper.IsEnd:{_ProgressHelper.IsEnd}" +
+                    $"\r\n" +
+                    $"_AudioPlayHelper.IsLoading:{_AudioPlayHelper.IsLoading}" +
+                    $"\r\n" +
+                    $"_IsLoading:{_IsLoading}" +
+                    $"\r\n" +
+                    $"IsPlaying:{IsPlaying}" +
                     $"\r\n";
 
                 _DebugInfo.SetVal(playInfo);

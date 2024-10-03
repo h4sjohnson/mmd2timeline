@@ -58,7 +58,7 @@ namespace mmd2timeline
             }
         }
 
-        int _PlayMode = MMDPlayMode.Default;
+        int _PlayMode = MMDPlayMode.Once;
         /// <summary>
         /// 播放模式
         /// </summary>

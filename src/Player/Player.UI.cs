@@ -136,7 +136,7 @@ namespace mmd2timeline
 
             #region 播放列表UI
 
-            _playModeChooser = SetupStaticEnumsChooser<MMDPlayMode>("Play Mode", MMDPlayMode.Names, MMDPlayMode.GetName(MMDPlayMode.Default), RightSide, m =>
+            _playModeChooser = SetupStaticEnumsChooser<MMDPlayMode>("Play Mode", MMDPlayMode.Names, MMDPlayMode.GetName(MMDPlayMode.Once), RightSide, m =>
             {
                 _triggerHelper.Trigger(TriggerEventHelper.TRIGGER_PLAYMODE_CHANGED, m);
                 this.Playlist.PlayMode = MMDPlayMode.GetValue(m);

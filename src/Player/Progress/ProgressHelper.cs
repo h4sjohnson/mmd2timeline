@@ -168,6 +168,7 @@ namespace mmd2timeline
             _isPlaying = true;
 
             OnPlayStatusChanged?.Invoke(_progress, _isPlaying);
+            SetProgress(_progress);
         }
 
         /// <summary>
